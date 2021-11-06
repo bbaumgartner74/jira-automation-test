@@ -10,8 +10,8 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post()
-  getNewIssueData(@Body() body: any): void {
-    console.log(body);
+  @Post('/transition')
+  getIssueTransitionedData(@Body() body: any): void {
+    console.log(`Issue Key ${body} transitioned from 'Todo' to 'In Progress'.`);
   }
 }

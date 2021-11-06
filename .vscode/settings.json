@@ -1,0 +1,7 @@
+{
+  "git.enabled": false,
+  "terminal.integrated.tabs.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": true
+  }
+}

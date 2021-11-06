@@ -10,11 +10,19 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Post('/transition')
-  getIssueTransitionedData(@Body() body: any): void {
+  // 100 - Transition from "Todo" to "In Progress"
+  @Post('/transition/100')
+  getIssueTransitionedFromTodoToInProgress(@Body() body: any): void {
     console.log(body);
-    console.log(
-      `Issue Key ${body.key} transitioned from 'Todo' to 'In Progress'.`,
-    );
+    console.log(`Issue ${body.key} transitioned from 'Todo' to 'In Progress'.`);
+    console.log(`Assignee: ${body.fields.assignee.displayName}`);
+  }
+
+  // 200 - Transition from "Todo" to "In Progress"
+  @Post('/transition/200')
+  getIssueTransitionedToReview(@Body() body: any): void {
+    console.log(body);
+    console.log(`Issue ${body.key} transitioned to 'Review'.`);
+    console.log(`Assignee: ${body.fields.assignee.displayName}`);
   }
 }

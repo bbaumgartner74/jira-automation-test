@@ -25,7 +25,7 @@ export class AppController {
   }
 
   // 300 - Transition from "Todo" to "In Progress"
-  @Post('/transition/200')
+  @Post('/transition/300')
   getIssueTransitionedFromInProgressToTodo(@Body() body: any): void {
     console.log(
       `Issue ${body.key} transitioned from 'In Progress' to 'Todo'. The BR was rejected.`,

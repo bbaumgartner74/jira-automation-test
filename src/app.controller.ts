@@ -24,12 +24,28 @@ export class AppController {
     console.log(`Assignee: ${body.fields.assignee.displayName}`);
   }
 
-  // 300 - Transition from "Todo" to "In Progress"
+  // 300 - Transition from "In Progress" to "Todo" && Label: "Rejected"
   @Post('/transition/300')
   getIssueTransitionedFromInProgressToTodo(@Body() body: any): void {
     console.log(
       `Issue ${body.key} transitioned from 'In Progress' to 'Todo'. The BR was rejected.`,
     );
+    console.log(`Assignee: ${body.fields.assignee.displayName}`);
+  }
+
+  // 400 - Transition from "Todo" to "In Progress" --> Pending round x
+  @Post('/transition/400')
+  getIssueTransitionedFromTodoToInProgressPending(@Body() body: any): void {
+    console.log(
+      `Issue ${body.key} transitioned from 'Todo' to 'In Progress'. BR round x.`,
+    );
+    console.log(`Assignee: ${body.fields.assignee.displayName}`);
+  }
+
+  // 500 - Transition to "Done" --> BR approved
+  @Post('/transition/500')
+  getIssueTransitionedToDoneApproved(@Body() body: any): void {
+    console.log(`Issue ${body.key} transitioned to "Done". BR approved.`);
     console.log(`Assignee: ${body.fields.assignee.displayName}`);
   }
 }

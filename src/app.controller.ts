@@ -12,6 +12,9 @@ export class AppController {
 
   @Post('/transition')
   getIssueTransitionedData(@Body() body: any): void {
-    console.log(`Issue Key ${body} transitioned from 'Todo' to 'In Progress'.`);
+    console.log(body);
+    console.log(
+      `Issue Key ${body.key} transitioned from 'Todo' to 'In Progress'.`,
+    );
   }
 }

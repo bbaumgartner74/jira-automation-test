@@ -45,7 +45,6 @@ export class AppController {
   // 500 - Transition to "Done" --> BR approved
   @Post('/transition/500')
   getIssueTransitionedToDoneApproved(@Body() body: any): void {
-    console.log(`Issue ${body.key} transitioned to "Done". BR approved.`);
-    console.log(`Assignee: ${body.fields.assignee.displayName}`);
+    console.log(body);
   }
 }
